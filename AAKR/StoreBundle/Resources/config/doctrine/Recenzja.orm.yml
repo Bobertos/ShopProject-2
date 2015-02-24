@@ -1,0 +1,14 @@
+AAKR\StoreBundle\Entity\Recenzja:
+    type: entity
+    table: recenzja
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        id_Filmu:
+            type: integer
+        recenzja:
+            type: string
+            legth: 900
+        

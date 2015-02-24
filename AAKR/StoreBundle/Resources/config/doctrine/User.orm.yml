@@ -1,0 +1,14 @@
+AAKR\StoreBundle\Entity\User:
+    type: entity
+    table: user
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+        password:
+            type: string
+            length: 16

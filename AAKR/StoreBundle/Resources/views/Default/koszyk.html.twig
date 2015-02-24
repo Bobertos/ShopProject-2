@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>{{ komunikat }}</h1><br/><br/>
+{{ idUzytkownika }}<br/><br/>
+<h2>Koszyk</h2>
+
+ <ul>
+     {% for film in filmy %}
+         <li>
+            <a href="/ShopProject/web/app_dev.php/{{ film.id }}/{{ idUzytkownika }}">
+                {{ film.tytul }}   {{ film.cena }}  {{ film.id }}
+            </a>
+             
+             
+         </li>
+     {% endfor %}
+ </ul>
+ 
+
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    
+
+<h2>Film:</h2>
+
+Tytuł Filmu:<br/><br/>
+
+<h12>{{ film.tytul }}</h1> <br/><br/>
+
+Gatunek:<br/><br/>
+
+<h12>{{ film.gatunek }}</h1><br/><br/>
+
+Aktorzy:<br/><br/>
+
+<h12>{{ film.aktorzy }}</h1><br/><br/>
+
+Cena:<br/><br/>
+
+<h12>{{ film.cena }}</h1><br/><br/>
+
+<a href="/ShopProject/web/app_dev.php/{{ film.id }}/{{ film.tytul }}"> Dodaj recenzje </a><br/><br/>
+<a href="/ShopProject/web/app_dev.php/do_koszyka/{{ film.id }}/{{ idUzytkownika }}/{{ film.cena}}"> Dodaj do koszyka </a><br/><br/>
+
+
+
+Recenzje:<br/><br/>
+
+{#<ul>
+     {% for recenzja in listaRecenzji %}
+         <li>
+            <a href="{{ path('aakr_store_pokaz_film', { 'tytul': film.tytul }) }}">
+                {{ film.tytul }}   {{ film.cena }}
+            </a>
+             
+             
+         </li>
+     {% endfor %}
+ </ul>#}
+
+ 
+
+{% endblock %}

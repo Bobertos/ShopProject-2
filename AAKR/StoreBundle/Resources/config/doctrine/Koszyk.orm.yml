@@ -1,0 +1,20 @@
+AAKR\StoreBundle\Entity\Koszyk:
+    type: entity
+    table: koszyk
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        id_Filmu:
+            type: integer
+            
+        id_Uzytkownika:
+            type: integer
+            
+        cena:
+            type: decimal
+            
+        zrealizowano:
+            type: boolean
+            

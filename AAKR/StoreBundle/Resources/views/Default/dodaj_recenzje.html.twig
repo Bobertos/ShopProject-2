@@ -1,0 +1,11 @@
+{#{% extends '::base.html.twig' %}#}
+Dodaje recenzje<br/>
+
+{#<form action="/ShopProject/web/app_dev.php/zapisz_recenzje" method="post" {{ form_enctype(form) }}>#}
+<form action="/ShopProject/web/app_dev.php/{{ id }}/{{ tytul }}" method="post" {{ form_enctype(form) }}>
+{#"/ShopProject/web/app_dev.php/{{ id }}/{{ tytul }}"#}
+{#<form action="{{ path('aakr_store_dodaj_recenzje') }}/1/matriz" method="post" {{ form_enctype(form) }}>#}
+   {{ form_widget(form) }}
+
+   <input type="submit" />
+</form>

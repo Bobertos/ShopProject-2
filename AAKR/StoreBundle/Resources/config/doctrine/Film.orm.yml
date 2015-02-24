@@ -1,0 +1,21 @@
+AAKR\StoreBundle\Entity\Film:
+    type: entity
+    table: film
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        tytul:
+            type: string
+            length: 300
+        gatunek:
+            type: string
+            legth: 200
+        aktorzy:
+            type: string
+            length: 300
+        cena:
+            type: decimal
+            scale: 2
+        

@@ -1,0 +1,18 @@
+<?php
+
+namespace AAKR\StoreBundle\Entity;
+
+/**
+ * Description of Koszyk
+ *
+ * @author Robert
+ */
+class Koszyk {
+    
+    private $id;
+    private $id_Filmu;
+    private $id_Uzytkownika;
+    private $cena;
+    private $zrealizowano;
+    
+}

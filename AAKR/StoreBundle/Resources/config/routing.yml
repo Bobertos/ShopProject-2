@@ -1,0 +1,41 @@
+aakr_store_pokaz_koszyk:
+    path:     /koszyk/{idUzytkownika}
+    defaults: { _controller: AAKRStoreBundle:Koszyk:pokazKoszyk }
+    
+aakr_store_zaloguj:
+    path:     /zaloguj
+    defaults: { _controller: AAKRStoreBundle:Login:zalogouj }
+
+aakr_store_homepage:
+    path:     /
+    defaults: { _controller: AAKRStoreBundle:Film:pokazFilmy }
+    methods: GET
+
+aakr_store_pokaz_film:
+    path:     /{id}/{idUzytkownika}
+    defaults: { _controller: AAKRStoreBundle:Film:pokazFilm }
+
+aakr_store_dodaj_do_koszyka:
+    path:     /do_koszyka/{idFilmu}/{idUzytkownika}/{cena}
+    defaults: { _controller: AAKRStoreBundle:Koszyk:dodajDoKoszyka }
+    
+
+
+aakr_store_dodaj_recenzje:
+    path:     /{id}/{tytul}
+    defaults: { _controller: AAKRStoreBundle:Film:dodajRecenzje }
+    
+aakr_store_zapisz_film:
+    path:   /dodaj/zapisz
+    defaults: { _controller: AAKRStoreBundle:Default:zapiszFilm}
+    methods: GET
+    
+aakr_store_dodaj_film:
+    path:   /dodaj_film/
+    defaults: { _controller: AAKRStoreBundle:Film:dodajFilm}
+    
+aakr_store_dodaj_uzytkownika:
+    path:   /dodaj_uzytkownika
+    defaults: { _controller: AAKRStoreBundle:User:dodajUser}
+    
+    
