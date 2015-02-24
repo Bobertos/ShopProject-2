@@ -45,8 +45,90 @@ class KoszykController extends Controller {
         ->getRepository('AAKRStoreBundle:Koszyk')
         ->findAll($idUzytkownika);
         
-        $i=0;
+        $tablica=array('jeden','dwa','trzy');
+	$nieTablica="cztery";
+	if(is_array($indexyFilmow)) 
+	{ 
+		echo 'To jest tablica <br/>'; 
+	} 
+	else 
+	{ 
+		echo'To nie jest tablica </br>'; 
+	}
+	if(is_array($nieTablica)) 
+	{ 
+		echo 'To jest tablica <br/>'; 
+	} 
+	else 
+	{ 
+		echo' To nie jest tablica </br>'; 
+	}
         
+        $ind = $indexyFilmow[0]->getIdFilmu();
+        $ind = $indexyFilmow[1]->getIdFilmu();
+        $ind = $indexyFilmow[0]->getIdFilmu();
+        
+//        $repository = $this->getDoctrine()
+//        ->getRepository('AAKRStoreBundle:Koszyk');
+//
+//        $query = $repository->createQueryBuilder('id_Uzytkownika')
+//            ->where('id_Uzytkownikap.price > :price')
+//            ->setParameter('price', '19.99')
+//            ->orderBy('p.price', 'ASC')
+//            ->getQuery();
+//
+//$products = $query->getResult();
+        
+//        $indexyFilmow = $this->get('doctrine_mongodb')
+//                ->getManager()
+//                ->createQueryBuilder('AAKRStoreBundle:Koszyk')
+//                ->field('id_Filmu')
+//                ->getQuery()
+//                ->execute();
+        
+//        foreach ($tab as $klucz => $wartosc)
+//		echo "tab['".$klucz."'] ==". $wartosc;
+//        
+//        list ($klucz, $wartosc) = each ($tablica);
+        
+        
+        
+        for($i=0; $i < count($indexyFilmow);$i++){
+            $koszyk = $indexyFilmow;
+            
+            $wartosc = $koszyk['id_Filmu'];
+            $wartosc = $koszyk["id_Filmu"];
+            $wartosc = $koszyk["id_Filmu"];
+            
+            list ($klucz, $wartosc) = each ($koszyk);
+            
+            
+            $indeksy[$i] = $koszyk->getIdFilmu();
+            $indeksy[$i] = $koszyk->getIdFilmu();
+            foreach ($koszyk as $klucz => $wartosc){
+		echo "tab['".$klucz."'] ==". $wartosc;
+                echo "tab['".$klucz."'] ==". $wartosc;
+            }
+        }
+        
+        foreach( $indexyFilmow as $id_Filmu => $aValue )
+        {
+            $film = $this->getDoctrine()
+            ->getRepository('AAKRStoreBundle:Film')
+            ->findAll($aValue);
+            $array[$i] = $film;
+            $i++;
+        }        
+                
+        
+        
+        
+        $id_Filmow = array_keys($indexyFilmow, 'id_Filmu');
+        
+        $i=0;
+        for (; $i<3;$i++){
+            $tab[$i] = $indexyFilmow[$i][1];
+        }
         foreach( $indexyFilmow as $id_Filmu => $aValue )
         {
             $film = $this->getDoctrine()
