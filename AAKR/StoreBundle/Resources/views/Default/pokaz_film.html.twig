@@ -28,18 +28,18 @@ Cena:<br/><br/>
 
 Recenzje:<br/><br/>
 
-{#<ul>
-     {% for recenzja in listaRecenzji %}
+{<ul>
+     {% for recenzja in recenzjeFilmu %}
          <li>
-            <a href="{{ path('aakr_store_pokaz_film', { 'tytul': film.tytul }) }}">
-                {{ film.tytul }}   {{ film.cena }}
-            </a>
+{#            <a href="{{ path('aakr_store_pokaz_film', { 'tytul': film.tytul }) }}">#}
+                {{ recenzja }}
+{#            </a>#}
              
              
          </li>
      {% endfor %}
- </ul>#}
-
+ </ul>
+}
  
 
 {% endblock %}

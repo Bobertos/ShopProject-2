@@ -139,14 +139,28 @@ class FilmController extends Controller
         ->getRepository('AAKRStoreBundle:Film')
         ->find($id);
 
-        if (!$film) {
+        $wszystkieRecenzje = $this->getDoctrine()
+        ->getRepository('AAKRStoreBundle:Recenzja')
+        ->findAll();
+        
+
+        for($i=0; $i < count($wszystkieRecenzje);$i++){
+            if($wszystkieRecenzje[$i]->getIdFilmu()== $id){
+                $recenzjeFilmu[$i] = $wszystkieRecenzje[$i]->getRecenzja();
+            }
+        }
+        
+        
+        
+        if (!$recenzjeFilmu) {
             throw $this->createNotFoundException(
                 'No product found for id '
             );
         }
         return $this->render('AAKRStoreBundle:Default:pokaz_film.html.twig', array(
            'film' => $film,
-            'idUzytkownika' => $idUzytkownika,
+           'recenzjeFilmu' => $recenzjeFilmu,
+           'idUzytkownika' => $idUzytkownika,
         ));
     }
     
